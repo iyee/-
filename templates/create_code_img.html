@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+                    <div class="col-xs-7">
+                        <input type="text" class="form-control" name="check_code" id="check_code" placeholder="请输入验证码">
+                    </div>
+                    <div class="col-xs-5">
+                        <img id="check_code_img" src="/create_code_img/" onclick="refresh_check_code(this)">
+{#                        src是url路径，可得到验证码图片，点击时调用refresh_check_code#}
+                    </div>
+                </div>
+
+<script>
+    function refresh_check_code(ths) {
+        ths.src += '?';
+ {#               src后面加问好会自动刷新验证码img的src#}
+    }</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{#<img id='verifycode' src="/verifycode/" alt="CheckCode"/>#}
+
+
+{#<img id='verifycode' src="/verifycode/?1" alt="CheckCode"/>#}
+{#<span id='verifycodeChange'>看不清，换一个</span>#}
+{#为了能够实现提交功能，需要增加form和input标签#}
+<form method='post' action='/verifycodeValid/'>
+    <input type="text" name="vc">
+    <img id='verifycode' src="/verifycode/?1" alt="CheckCode" onclick="refresh_check_code(this)"/>
+<span id='verifycodeChange'>看不清，换一个</span>
+<br>
+<input type="submit" value="提交">
+</form>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+    {#$(function(){#}
+    {#    $('#verifycodeChange').css('cursor','pointer').click(function() {#}
+    {#        $('#verifycode').attr('src',$('#verifycode').attr('src')+1)#}
+    {#    });#}
+    {#{);#}
+
+    function refresh_check_code( this ) {
+        this.src+='?';
+
+    }
+</script>
+
+</body>
+</html>
